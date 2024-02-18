@@ -11,6 +11,7 @@ import star from './star.svg'
 import truckFast from './truck-fast.svg'
 import twitter from './twitter.svg'
 import trendstore from './TrendStore.svg'
+import cart from './cart.svg'
 
 export {
     arrowRight,
@@ -25,5 +26,6 @@ export {
     star,
     truckFast,
     twitter,
-    trendstore
+    trendstore,
+    cart
 }

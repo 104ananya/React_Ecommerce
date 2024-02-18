@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { logo } from "../assets/images";
+import { cart } from "../assets/icons";
 
 const Navbar = () => {
   return (
@@ -23,6 +24,18 @@ const Navbar = () => {
         >
           Get started
         </button>
+
+        {/* CART ICON  */}
+        <div className="text-sm px-4 py-2 text-center flex justify-center items-center hidden sm:flex">
+          <NavLink to="/cart" className="relative py-2">
+            <div className="top-0 absolute left-3">
+              <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white hover:bg-dark-red">
+                10
+              </p>
+            </div>
+            <img src={cart} alt="cart" />
+          </NavLink>
+        </div>
 
         {/* NAVBAR TOGGLE BUTTON  */}
         <button
