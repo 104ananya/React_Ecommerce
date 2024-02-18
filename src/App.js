@@ -7,11 +7,13 @@ import Contact from "./pages/Contact";
 import SingleProduct from "./pages/SingleProduct";
 import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage";
+import Header from "./components/Header";
 
 
 const App = () => {
   return (
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -21,7 +23,6 @@ const App = () => {
         <Route path="/singleproduct/:id" element={<SingleProduct />} />
         <Route path="/cart" element={<Cart />} />
 
-        {/* if user access any other url then throw error page */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
