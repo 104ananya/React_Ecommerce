@@ -27,6 +27,9 @@ import open_laptop from './open-laptop.png'
 
 import logo from './logo.svg'
 
+import two_lady from './two_lady.png'
+import man_grp_1 from './man_grp_1.png'
+
 export {
     bigShoe1,
     bigShoe2,
@@ -56,6 +59,9 @@ export {
 
     hp_tv,
     laptops,
-    open_laptop
+    open_laptop,
+
+    two_lady,
+    man_grp_1
 
 }
