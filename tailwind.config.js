@@ -24,9 +24,18 @@ export default {
       colors: {
         'primary': "#ECEEFF",
         "coral-red": "#FF6452",
-        "dark-red": "#b24639",
+        "dark-red": "#BA181B",
         "slate-gray": "#6D6D6D",
         "pale-blue": "#F5F6FF",
+        "gradient": "#FF8080",
+        // "light-green": "#AED7C1",
+        "light-green": "#d8e2dc",
+        "light-yellow": "#ffe5d9",
+        "light-pink": "#ffcad4",
+        "light-brown": "#9d8189",
+        "grey-white": "#edf2f4",
+        "grey-blue": "#8d99ae",
+        "dark-blue": "#03071e",
         "white-400": "rgba(255, 255, 255, 0.80)"
       },
       boxShadow: {
