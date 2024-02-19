@@ -8,7 +8,7 @@ const HeroSection = ({heroData}) => {
 
 
   return (
-    <div className="grid grid-cols-2 mx-20 bg-gray-200">
+    <main className="grid grid-cols-2 mx-20 bg-gray-200">
       
       {/* Content for the first column */}
       <div className="flex justify-center items-center">
@@ -31,7 +31,7 @@ const HeroSection = ({heroData}) => {
       <div className="p-4">
         <img src={imageUrl} alt="hero" />
       </div>
-    </div>
+    </main>
   );
 };
 
