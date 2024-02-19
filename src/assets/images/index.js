@@ -19,6 +19,11 @@ import thumbnailBackground from './thumbnail-background.svg'
 import thumbnailShoe1 from './thumbnail-shoe1.svg'
 import thumbnailShoe2 from './thumbnail-shoe2.svg'
 import thumbnailShoe3 from './thumbnail-shoe3.svg'
+import blue_jordan_shoe from './blue-jordan-shoe.png'
+import color_jordan_shoe from './color-jordan-shoe.png'
+import hp_tv from './hp-tv.png'
+import laptops from './laptop.png'
+import open_laptop from './open-laptop.png'
 
 import logo from './logo.svg'
 
@@ -44,6 +49,13 @@ export {
     thumbnailShoe2,
     thumbnailShoe3,
 
-    logo
+    logo,
+
+    blue_jordan_shoe,
+    color_jordan_shoe,
+
+    hp_tv,
+    laptops,
+    open_laptop
 
 }

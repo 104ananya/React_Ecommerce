@@ -62,4 +62,7 @@
   .nav-links-mobile{
     @apply block py-2 px-3 text-white rounded text-lg
   }
+  .button{
+    @apply text-white bg-coral-red hover:bg-dark-red font-medium rounded-lg text-sm px-4 py-2 text-center
+  }
 }

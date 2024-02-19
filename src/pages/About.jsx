@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import HeroSection from "../components/HeroSection";
 
 const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <main className=" relative mt-[75px]">
+      <section>
+        <HeroSection />
+      </section>
+      
+    </main>
+  );
+};
 
-export default About
+export default About;
