@@ -56,16 +56,23 @@
     @apply font-montserrat text-slate-gray text-lg leading-7;
   }
 
-  .nav-links{
-    @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-coral-red md:p-0 
+  .nav-links {
+    @apply block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-coral-red md:p-0
   }
-  .nav-links-mobile{
+
+  .nav-links-mobile {
     @apply block py-2 px-3 text-white rounded text-lg
   }
-  .button{
+
+  .button {
     @apply text-white bg-coral-red hover:bg-dark-red font-medium rounded-lg text-sm px-4 py-2 text-center
   }
-  .service-grid{
+
+  .service-grid {
     @apply flex flex-col items-center justify-center p-6 text-center
+  }
+
+  .brand-grid {
+    @apply p-4 flex flex-col items-center justify-center
   }
 }
