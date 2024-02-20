@@ -8,6 +8,7 @@ import SingleProduct from "./pages/SingleProduct";
 import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 
 const App = () => {
@@ -25,6 +26,8 @@ const App = () => {
 
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+
+     <Footer/> 
     </BrowserRouter>
   );
 };
