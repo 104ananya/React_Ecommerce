@@ -12,6 +12,7 @@ import truckFast from './truck-fast.svg'
 import twitter from './twitter.svg'
 import trendstore from './TrendStore.svg'
 import cart from './cart.svg'
+import cat from './cat.svg'
 
 export {
     arrowRight,
@@ -27,5 +28,6 @@ export {
     truckFast,
     twitter,
     trendstore,
-    cart
+    cart,
+    cat
 }
