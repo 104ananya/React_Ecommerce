@@ -3,6 +3,7 @@ import HeroSection from "../components/HeroSection";
 import { laptops } from "../assets/images";
 import Services from "../components/Services";
 import Brands from "../components/Brands";
+import FeaturedProducts from "../components/FeaturedProducts";
 
 const Home = () => {
   const data = {
@@ -19,7 +20,7 @@ const Home = () => {
       <section>
         <HeroSection heroData={data} />
       </section>
-      <section className="padding">Popular Products</section>
+      <section className="padding"><FeaturedProducts/></section>
       <section className="padding">Super Quality</section>
       <section className="padding-x">
         <Services />
