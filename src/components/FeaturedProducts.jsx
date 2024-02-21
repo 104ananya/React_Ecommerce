@@ -3,7 +3,7 @@ import { useProductContext } from "../context/productcontext";
 import ProductCard from "./ProductCard";
 
 const FeaturedProducts = () => {
-  const { isLoading, products, featureProducts } = useProductContext();
+  const { isLoading, featureProducts } = useProductContext();
   
   // console.log(featureProducts);
 

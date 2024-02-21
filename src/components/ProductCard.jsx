@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import FormatPrice from "../helper/FormatPrice";
 
 const ProductCard = (curElem) => {
   const { id, name, image, price, company } = curElem;
@@ -18,7 +19,7 @@ const ProductCard = (curElem) => {
         />
         <p className="text-lg font-bold text-center">{name}</p>
         <p className="text-sm text-center">{company}</p>
-        <p className="text-sm text-center">Price: ₹ {price}</p>
+        <p className="text-sm text-center">Price: <FormatPrice price = {price} /></p>
       </motion.div>
     </NavLink>
   );
