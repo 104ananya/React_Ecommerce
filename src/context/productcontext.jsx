@@ -3,27 +3,47 @@
 // 3. Customer - useContext hook
 
 import axios from "axios";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { useEffect } from "react";
+import productReducer from "../reducer/productReducer";
 
 // STEP 1
 const AppContext = createContext();
 
 // API url
-// const API = "https://api.pujakaitem.com/api/products";
-const API = "https://fakestoreapi.com/products";
+const API = "https://api.pujakaitem.com/api/products";
+// const API = "https://fakestoreapi.com/products";
 
-
-const getProduct = async (url) => {
-    const res = await axios.get(url);
-
-    console.log(res)
-    const products = res.data;
+const initialState = {
+  isLoading: false,
+  isError: false,
+  products: [],
+  featureProducts: [],
+  isSingleLoading: false,
 };
-
 
 // STEP 2
 const AppProvider = ({ children }) => {
+  // We need this data in Three steps -
+  // 1. Loading
+  // 2. Displaying
+  // 3. Error ------- for all that we use useReducer
+
+  const [state, dispatch] = useReducer(productReducer, initialState);
+
+  const getProduct = async (url) => {
+    dispatch({ type: "API_LOADING" });
+    try {
+      // using Axios for fetching
+      const res = await axios.get(url);
+      const products = await res.data;
+      // console.log(products);
+
+      dispatch({ type: "MY_API_DATA", payload: products });
+    } catch (error) {
+      dispatch({ type: "API_ERROR" });
+    }
+  };
 
   //Function for API calling
   useEffect(() => {
@@ -31,9 +51,7 @@ const AppProvider = ({ children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ name: "Ananya" }}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={{ ...state }}>{children}</AppContext.Provider>
   );
 };
 
