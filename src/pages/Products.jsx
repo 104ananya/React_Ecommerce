@@ -8,7 +8,7 @@ const Products = () => {
 
 
   return (
-    <div className="mt-[75px]">
+    <div >
       <p>Name: {name}</p>
       <div>Products</div>
     </div>
