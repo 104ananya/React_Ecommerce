@@ -5,6 +5,7 @@ import { useProductContext } from "../context/productcontext";
 import PageNavigation from "../components/PageNavigation";
 import FormatPrice from "./../helper/FormatPrice";
 import { FaCartShopping } from "react-icons/fa6";
+import ImageSection from "../components/ImageSection";
 
 const APIurl = "https://api.pujakaitem.com/api/products";
 
@@ -43,28 +44,8 @@ const SingleProduct = () => {
       <PageNavigation title={name} />
 
       <main className="grid grid-cols-2 gap-4 padding-x">
-
-
         {/* Images Section */}
-        <section className="padding">
-          <div>
-            {/* Main Preview Image */}
-            <div className="mb-4">
-              <img
-                src="main_preview_image.jpg"
-                alt="Main Preview"
-                className="w-full"
-              />
-            </div>
-            {/* Thumbnail Images */}
-            <div className="grid grid-cols-3 gap-4">
-              <img src="thumbnail1.jpg" alt="Thumbnail 1" className="w-full" />
-              <img src="thumbnail2.jpg" alt="Thumbnail 2" className="w-full" />
-              <img src="thumbnail3.jpg" alt="Thumbnail 3" className="w-full" />
-            </div>
-          </div>
-        </section>
-
+        <ImageSection img = {image} />
 
         {/* Details Section */}
         <section>
@@ -79,11 +60,9 @@ const SingleProduct = () => {
           </p>
           <p>{stars}</p>
           <p>{reviews} reviews</p>
-          <p className="text-gray-500 lg:py-7 lg:leading-6">
-            {description}
-          </p>
+          <p className="text-gray-500 lg:py-7 lg:leading-6">{description}</p>
           <p className="text-zinc-600 py-2">
-            Available: 
+            Available:
             <span className="font-bold">
               {stocks > 0 ? " In Stock" : " Out of Stock"}
             </span>
