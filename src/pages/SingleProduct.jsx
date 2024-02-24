@@ -19,7 +19,7 @@ const SingleProduct = () => {
   // console.log(id);
 
   const {
-    id: productId,
+    // id: productId,
     name,
     company,
     price,
@@ -27,7 +27,7 @@ const SingleProduct = () => {
     category,
     reviews,
     stars,
-    stocks,
+    stock,
     image,
   } = singleProduct;
 
@@ -64,7 +64,7 @@ const SingleProduct = () => {
           <p className="text-zinc-600 py-2">
             Available:
             <span className="font-bold">
-              {stocks > 0 ? " In Stock" : " Out of Stock"}
+              {stock > 0 ? " In Stock" : " Out of Stock"}
             </span>
           </p>
           <div className="amount font-bold flex items-center justify-between lg:flex-col lg:items-start mb-6">

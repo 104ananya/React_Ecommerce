@@ -1,7 +1,9 @@
 import React from "react";
+import { useState } from "react"
 
 const ImageSection = ({ img = [{url : ""}] }) => {
-  console.log(img);
+//   console.log(img);
+const [previewImg, setPreviewImg] = useState(img[0]);
 
   return (
     <main className="padding">
@@ -9,9 +11,9 @@ const ImageSection = ({ img = [{url : ""}] }) => {
         {/* Main Preview Image */}
         <div className="mb-4">
           <img
-            src={img[0].url}
-            alt={img[0].filename}
-            className="w-full"
+            src={previewImg.url}
+            alt={previewImg.filename}
+            className="w-full h-full"
           />
         </div>
         {/* Thumbnail Images */}
@@ -22,6 +24,7 @@ const ImageSection = ({ img = [{url : ""}] }) => {
               alt={curItem.filename}
               key={index}
               className="w-full h-full"
+              onClick={() => setPreviewImg(curItem)}
             />
           ))}
         </div>
