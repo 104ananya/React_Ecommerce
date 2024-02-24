@@ -6,6 +6,7 @@ import PageNavigation from "../components/PageNavigation";
 import FormatPrice from "./../helper/FormatPrice";
 import { FaCartShopping } from "react-icons/fa6";
 import ImageSection from "../components/ImageSection";
+import StarRatings from "../helper/StarRatings";
 
 const APIurl = "https://api.pujakaitem.com/api/products";
 
@@ -49,24 +50,23 @@ const SingleProduct = () => {
 
         {/* Details Section */}
         <section>
-          <h2 className="company uppercase text-coral-red font-bold text-sm sm:text-md tracking-wider  sm:pb-5">
+          <div className="company uppercase text-coral-red font-bold text-sm sm:text-md tracking-wider  sm:pb-5">
             {company}
-          </h2>
-          <h3 className="product capitalize text-zinc-800 font-bold text-2xl sm:text-4xl sm:leading-none pb-5">
+          </div>
+          <div className="product capitalize text-zinc-800 font-bold text-2xl sm:text-4xl sm:leading-none pb-5">
             {name}
-          </h3>
-          <p className="discount text-coral-red bg-[#ffe0dc] p-2 w-max rounded">
+          </div>
+          <div className="discount text-coral-red bg-[#ffe0dc] py-1 px-2 w-max rounded">
             {category}
-          </p>
-          <p>{stars}</p>
-          <p>{reviews} reviews</p>
-          <p className="text-gray-500 lg:py-7 lg:leading-6">{description}</p>
-          <p className="text-zinc-600 py-2">
+          </div>
+          <div className="flex pt-3"><StarRatings stars = {stars} reviews = {reviews}/></div>
+          <div className="text-gray-500 lg:py-7 lg:leading-6">{description}</div>
+          <div className="text-zinc-600 py-2">
             Available:
             <span className="font-bold">
               {stock > 0 ? " In Stock" : " Out of Stock"}
             </span>
-          </p>
+          </div>
           <div className="amount font-bold flex items-center justify-between lg:flex-col lg:items-start mb-6">
             <div className="discount-price items-center flex text-zinc-800">
               <div className="price text-3xl">
