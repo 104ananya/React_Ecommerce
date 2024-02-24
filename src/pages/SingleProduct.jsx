@@ -7,6 +7,7 @@ import FormatPrice from "./../helper/FormatPrice";
 import { FaCartShopping } from "react-icons/fa6";
 import ImageSection from "../components/ImageSection";
 import StarRatings from "../helper/StarRatings";
+import AddToCart from "../components/AddToCart";
 
 const APIurl = "https://api.pujakaitem.com/api/products";
 
@@ -60,7 +61,7 @@ const SingleProduct = () => {
             {category}
           </div>
           <div className="flex pt-3"><StarRatings stars = {stars} reviews = {reviews}/></div>
-          <div className="text-gray-500 lg:py-7 lg:leading-6">{description}</div>
+          <div className="text-gray-500 lg:py-3 lg:leading-6">{description}</div>
           <div className="text-zinc-600 py-2">
             Available:
             <span className="font-bold">
@@ -80,6 +81,13 @@ const SingleProduct = () => {
               <FormatPrice price={price + 0.3 * price} />
             </del>
           </div>
+          
+
+          {/* Actions Section */}
+
+          {stock > 0 && <AddToCart productData = {singleProduct}/>}
+            
+
           <div className="sm:flex lg:mt-8 w-full">
             {/* <div className="quantity-container w-full bg-light-grayish-blue rounded-lg h-14 mb-4 flex items-center justify-between px-6 lg:px-3 font-bold sm:mr-3 lg:mr-5 lg:w-1/3">
               <button
