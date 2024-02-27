@@ -23,7 +23,7 @@ const [previewImg, setPreviewImg] = useState(img[0]);
               src={curItem.url}
               alt={curItem.filename}
               key={index}
-              className="w-full h-full"
+              className="w-full h-full cursor-pointer"
               onClick={() => setPreviewImg(curItem)}
             />
           ))}
