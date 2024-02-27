@@ -2,8 +2,16 @@ import React from "react";
 import ProductList from "../components/ProductList";
 import FilterSection from "../components/FilterSection";
 import SortingSection from "../components/SortingSection";
+import { useFilterContext } from "../context/filterContext";
 
 const Products = () => {
+
+  const {filter_products} = useFilterContext();
+  console.log(filter_products);
+
+
+
+
   return (
     <main className="relative mt-[75px] padding-x">
       {/* Categories */}
