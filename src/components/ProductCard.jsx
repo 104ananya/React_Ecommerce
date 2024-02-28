@@ -17,8 +17,8 @@ const ProductCard = (curElem) => {
           alt={name}
           className="w-full h-auto mb-2 rounded-lg shadow-md"
         />
-        <p className="text-lg font-bold text-center">{name}</p>
-        <p className="text-sm text-center">{company}</p>
+        <p className="text-lg font-bold text-center capitalize">{name}</p>
+        <p className="text-sm text-center capitalize">{company}</p>
         <p className="text-sm text-center">Price: <FormatPrice price = {price} /></p>
       </motion.div>
     </NavLink>

@@ -6,8 +6,8 @@ import { useFilterContext } from "../context/filterContext";
 
 const Products = () => {
 
-  const {filter_products} = useFilterContext();
-  console.log(filter_products);
+  // const {filter_products} = useFilterContext();
+  // console.log(filter_products);
 
 
 
@@ -31,7 +31,7 @@ const Products = () => {
         </div>
 
         {/* 2nd column - 3/4 width */}
-        <div className="w-3/4 bg-slate-600">
+        <div className="w-3/4 ">
           <SortingSection />
 
 
