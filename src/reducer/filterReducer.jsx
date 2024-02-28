@@ -10,7 +10,7 @@ const filterReducer = (state, action) => {
     case "SET_LIST_VIEW":
       return {
         ...state,
-        list_view: true,
+        list_view: !state.list_view,
       };
 
     default:
