@@ -8,7 +8,7 @@ const ProductCard = (curElem) => {
   return (
     <NavLink to={`/singleproduct/${id}`}>
       <motion.div
-        className="p-4 m-5 flex flex-col justify-center items-center rounded-md  hover:bg-gray-300"
+        className="p-4 m-5 flex flex-col justify-center items-center rounded-md  hover:bg-gray-100"
         whileHover={{ scale: 1.05 }}
         transition={{ duration: 0.3 }}
       >

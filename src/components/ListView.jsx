@@ -18,15 +18,19 @@ const ListView = ({ products }) => {
             {/* Details  */}
             <div className="col-span-2 p-4 pt-0">
               <p className="capitalize font-semibold">{name}</p>
-              <p className="text-sm uppercase my-2">{company}</p>
-              <p>{description.slice(0, 149)}...</p>
+              <p className="text-sm uppercase my-2 text-zinc-700">{company}</p>
+              <p className="text-gray-500">{description.slice(0, 149)}...</p>
               <div className="w-full flex justify-between my-5">
-                <FormatPrice price={price} />
+                <div className="text-zinc-500 font-semibold">
+                  <FormatPrice price={price} />
+                </div>
+
                 <NavLink to={`/singleproduct/${id}`}>
-                  <button className="uppercase text-sm border-2 border-coral-red px-4 py-2 hover:bg-coral-red hover:text-white">
+                  <button className="uppercase text-sm border-2 text-zinc-600 border-coral-red px-4 py-2 hover:bg-coral-red hover:text-white">
                     Read More
                   </button>
                 </NavLink>
+
               </div>
             </div>
           </div>
