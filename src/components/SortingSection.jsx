@@ -18,7 +18,21 @@ const SortingSection = () => {
       <div>{filter_products.length} Total products</div>
 
       {/* Sorting function  */}
-      <div>sort</div>
+      <div className="sorting-dropdown">
+        <form action="#" className="">
+          <label htmlFor="sort" className="mr-2 text-gray-700"></label>
+          <select
+            name="sort"
+            id="sort"
+            className="border border-gray-300 rounded-md px-3 py-1 text-gray-700 focus:outline-none"
+          >
+            <option value="lowest">Price (lowest)</option>
+            <option value="highest">Price (highest)</option>
+            <option value="a-z">Product (a-z)</option>
+            <option value="z-a">Product (z-a)</option>
+          </select>
+        </form>
+      </div>
     </div>
   );
 };
