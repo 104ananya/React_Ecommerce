@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
 import { useFilterContext } from "../context/filterContext";
 
 const SortingSection = () => {
-  const { filter_products, setListView } = useFilterContext();
+  const { filter_products, setListView, sorting_function } = useFilterContext();
 
   return (
     <div className="flex justify-between mb-4">
@@ -25,6 +25,7 @@ const SortingSection = () => {
             name="sort"
             id="sort"
             className="border border-gray-300 rounded-md px-3 py-1 text-gray-700 focus:outline-none"
+            onClick={sorting_function}
           >
             <option value="lowest">Price (lowest)</option>
             <option value="highest">Price (highest)</option>
