@@ -10,6 +10,9 @@ const initialState = {
   all_products: [],
   list_view: true,
   sorting_value: "lowest",
+  filters: {
+    text: "",
+  },
 };
 
 export const FilterContextProvider = ({ children }) => {
@@ -31,15 +34,22 @@ export const FilterContextProvider = ({ children }) => {
     dispatch({ type: "GET_SORTING_VALUE", payload: selectedValue });
   };
 
+  // Update the filter value of search bar  not just this but it works for all filtering.
+  // We are calling it Globally
+  const updateFilterValue = (event) => {
+    let name = event.target.name;
+    let value = event.target.value;
+
+    return dispatch({ type: "UPDATE_FILTERS_VALUE", payload: { name, value } });
+  };
+
   // _______________________________________________________________
 
   // useEffect Hook to update sorted products
   useEffect(() => {
-    dispatch({ type: "GET_SORTED_PRODUCTS", payload: products }, [
-      products,
-      state.sorting_value,
-    ]);
-  });
+    dispatch({ type: "FILTER_SEARCHED_PRODUCTS", payload: products});
+    dispatch({ type: "GET_SORTED_PRODUCTS", payload: products });
+  }, [products, state.sorting_value, state.filters]);
 
   // useEffect Hook to update the filtered products when the products change
   useEffect(() => {
@@ -47,7 +57,9 @@ export const FilterContextProvider = ({ children }) => {
   }, [products]);
 
   return (
-    <FilterContext.Provider value={{ ...state, setListView, sorting_function }}>
+    <FilterContext.Provider
+      value={{ ...state, setListView, sorting_function, updateFilterValue }}
+    >
       {children}
     </FilterContext.Provider>
   );

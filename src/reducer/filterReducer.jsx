@@ -48,6 +48,36 @@ const filterReducer = (state, action) => {
         filter_products: finalSortedProduct,
       };
 
+    case "UPDATE_FILTERS_VALUE":
+      const { name, value } = action.payload;
+
+      return{
+        ...state,
+        filters: {
+          ...state.filters,
+          [name]: value,
+        }
+      }
+    
+    case "FILTER_SEARCHED_PRODUCTS":
+      let { all_products } = state;
+      let tempFilterProduct = [...all_products];
+
+      const {text} = state.filters;
+
+      if(text){
+        tempFilterProduct = tempFilterProduct.filter((current) => {
+          return current.name.toLowerCase().includes(text.toLowerCase());
+          // this is to check if the entered text is in the title of each/any element 
+        })
+      }
+
+      return{
+        ...state,
+        filter_products: tempFilterProduct
+      }
+
+
     // ---------------------------------------------------------------
     default:
       return state;
