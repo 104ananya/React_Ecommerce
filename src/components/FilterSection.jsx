@@ -8,12 +8,12 @@ import PriceFilter from './PriceFilter';
 const FilterSection = () => {
   return (
     <div className="flex flex-col justify-around h-screen p-5">
-      <div className="p-2 border border-gray-300 rounded"><SearchBar /></div>
-      <div className="p-2 border border-gray-300 rounded"><CategoryFilter/></div>
-      <div className="p-2 border border-gray-300 rounded"><CompanyFilter/></div>
-      <div className="p-2 border border-gray-300 rounded"><ColorFilter/></div>
-      <div className="p-2 border border-gray-300 rounded"><PriceFilter/></div>
-      <div className="p-2 border border-gray-300 rounded">Item 6</div>
+      <div className="p-2 "><SearchBar /></div>
+      <div className="p-2 "><CategoryFilter/></div>
+      <div className="p-2 "><CompanyFilter/></div>
+      <div className="p-2 "><ColorFilter/></div>
+      <div className="p-2 "><PriceFilter/></div>
+      <div className="p-2 ">Item 6</div>
     </div>
   );
 };

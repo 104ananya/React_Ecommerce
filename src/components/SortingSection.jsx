@@ -6,11 +6,11 @@ const SortingSection = () => {
   const { filter_products, setListView, sorting_function } = useFilterContext();
 
   return (
-    <div className="flex justify-between mb-4">
+    <div className="flex justify-between mb-3 px-8">
       {/* Grid toggle  */}
       <div>
-        <button className="p-1.5 bg-gray-100" onClick={setListView}>
-          <BsFillGrid1X2Fill />
+        <button className="p-1.5 " onClick={setListView}>
+          <BsFillGrid1X2Fill className="text-coral-red"/>
         </button>
       </div>
 

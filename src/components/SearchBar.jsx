@@ -9,7 +9,7 @@ const SearchBar = () => {
   } = useFilterContext()
 
   return (
-    <div>
+    <div >
       <form onSubmit={(e) => e.preventDefault()}>
         <input
           type="text"
@@ -17,6 +17,8 @@ const SearchBar = () => {
           value={text}
           placeholder="Search.."
           onChange={updateFilterValue}
+          className="w-full px-4 py-2 border border-gray-300 rounded shadow focus:outline-none focus:ring-1 focus:ring-coral-red"
+
         />
       </form>
     </div>

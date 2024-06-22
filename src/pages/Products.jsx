@@ -15,7 +15,7 @@ const Products = () => {
   return (
     <main className="relative mt-[75px] padding-x">
       {/* Categories */}
-      <div className="flex justify-between items-center bg-gray-200 p-4 mb-4">
+      <div className="flex justify-between items-center  border-b-2 border-gray-200 p-4 mb-3">
         <span>Category 1</span>
         <span>Category 2</span>
         <span>Category 3</span>
@@ -26,7 +26,7 @@ const Products = () => {
       {/* Product grid */}
       <div className="flex">
         {/* 1st column - 1/4 width */}
-        <div className="w-1/4 bg-gray-200">
+        <div className="w-1/4 border-r-2 border-gray-300">
           <FilterSection />
         </div>
 
