@@ -1,24 +1,29 @@
 import React from "react";
-import { useFilterContext } from "../context/filterContext";
+import _ from 'lodash';
 
-const CategoryFilter = () => {
-
-  const {
-    filters: {text},
-    all_products,
-    updateFilterValue,
-  } = useFilterContext()
-
-  // // `getUniqueData` is common function that will retrieve distinct data from the json
-  // const categoryWiseData = getUniqueData(all_products, "category");
+const CategoryFilter = ({ categoryArray, updateCategoryFilter }) => {
+  console.log(categoryArray);
 
   return (
-    <div className="pl-6 pr-3 mr-12  ">
-      <h1 className="text-base font-bold mb-4">Categories</h1>
-      <p className="text-gray-600 hover:border-b border-coral-red mb-2">Category 1</p>
-      <p className="text-gray-600 hover:border-b border-coral-red mb-2">Category 2</p>
-      <p className="text-gray-600 hover:border-b border-coral-red mb-2">Category 3</p>
-      <p className="text-gray-600 hover:border-b border-coral-red">Category 4</p>
+    <div className="pl-6 pr-6 mr-12  ">
+      <h3 className=" font-bold mb-4">Categories</h3>
+
+      <div>
+        {categoryArray.map((currElem, index) => {
+          return (
+            <button
+              key={index}
+              type="button"
+              name="category"
+              value={currElem}
+              onClick={updateCategoryFilter}
+              className="text-gray-600 flex w-full hover:border-b border-coral-red mb-2"
+            >
+              {_.capitalize(currElem)}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };

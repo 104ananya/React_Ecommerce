@@ -63,7 +63,7 @@ const filterReducer = (state, action) => {
       let { all_products } = state;
       let tempFilterProduct = [...all_products];
 
-      const {text} = state.filters;
+      const {text, category} = state.filters;
 
       if(text){
         tempFilterProduct = tempFilterProduct.filter((current) => {
@@ -71,6 +71,15 @@ const filterReducer = (state, action) => {
           // this is to check if the entered text is in the title of each/any element 
         })
       }
+
+      if(category){
+        tempFilterProduct = tempFilterProduct.filter((current) => {
+          return current.category === category;
+          // this is to check if the clicked category is same as the element's category 
+        })
+      }
+
+
 
       return{
         ...state,

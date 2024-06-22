@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchBar = ({inputText, searchFunction}) => {
+const SearchBar = ({inputText, updateSearchFilter}) => {
 
   return (
     <div className="mx-6" >
@@ -10,7 +10,7 @@ const SearchBar = ({inputText, searchFunction}) => {
           name="text"
           value={inputText}
           placeholder="Search.."
-          onChange={searchFunction}
+          onChange={updateSearchFilter}
           className="w-full px-4 py-2 border border-gray-300 rounded shadow focus:outline-none focus:ring-1 focus:ring-coral-red"
 
         />

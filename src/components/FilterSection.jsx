@@ -8,7 +8,8 @@ import { useFilterContext } from "../context/filterContext";
 
 const FilterSection = () => {
   const {
-    filters: { text },
+    filters: { text, category },
+
     all_products,
     updateFilterValue,
   } = useFilterContext();
@@ -26,15 +27,16 @@ const FilterSection = () => {
     return uniqueNewData;
   };
 
-
+  // FOR category filter
+  const categoryWiseData = getUniqueData(all_products, "category");
 
   return (
     <div className="flex flex-col justify-around h-screen p-5">
       <div className="p-2">
-        <SearchBar inputText={text} searchFunction={updateFilterValue} />
+        <SearchBar inputText={text} updateSearchFilter={updateFilterValue} />
       </div>
       <div className="p-2">
-        <CategoryFilter />
+        <CategoryFilter categoryArray = {categoryWiseData} updateCategoryFilter={updateFilterValue} />
       </div>
       <div className="p-2">
         <CompanyFilter />
