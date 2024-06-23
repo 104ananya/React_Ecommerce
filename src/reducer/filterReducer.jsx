@@ -21,7 +21,7 @@ const filterReducer = (state, action) => {
 
     case "GET_SORTED_PRODUCTS":
       const { filter_products, sorting_value } = state;
-      let initialSortedProduct = [...filter_products];  // Create a copy of filter_products
+      let initialSortedProduct = [...filter_products]; // Create a copy of filter_products
 
       const sortingProduct = (a, b) => {
         if (sorting_value === "lowest") {
@@ -51,41 +51,45 @@ const filterReducer = (state, action) => {
     case "UPDATE_FILTERS_VALUE":
       const { name, value } = action.payload;
 
-      return{
+      return {
         ...state,
         filters: {
           ...state.filters,
           [name]: value,
-        }
-      }
-    
+        },
+      };
+
     case "FILTER_SEARCHED_PRODUCTS":
       let { all_products } = state;
       let tempFilterProduct = [...all_products];
 
-      const {text, category} = state.filters;
+      const { text, category, company } = state.filters;
 
-      if(text){
+      if (text) {
         tempFilterProduct = tempFilterProduct.filter((current) => {
           return current.name.toLowerCase().includes(text.toLowerCase());
-          // this is to check if the entered text is in the title of each/any element 
-        })
+          // this is to check if the entered text is in the title of each/any element
+        });
       }
 
-      if(category){
-        tempFilterProduct = tempFilterProduct.filter((current) => {
-          return current.category === category;
-          // this is to check if the clicked category is same as the element's category 
-        })
+      if (category != 'all') {
+        tempFilterProduct = tempFilterProduct.filter(
+          (current) => current.category === category
+          // this is to check if the clicked category is same as the element's category
+        );
       }
 
+      if (company != "all") {
+        tempFilterProduct = tempFilterProduct.filter(
+          (current) => current.company === company
+          // this is to check if the clicked category is same as the element's category
+        );
+      }
 
-
-      return{
+      return {
         ...state,
-        filter_products: tempFilterProduct
-      }
-
+        filter_products: tempFilterProduct,
+      };
 
     // ---------------------------------------------------------------
     default:

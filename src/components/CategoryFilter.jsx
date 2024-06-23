@@ -2,11 +2,11 @@ import React from "react";
 import _ from 'lodash';
 
 const CategoryFilter = ({ categoryArray, updateCategoryFilter }) => {
-  console.log(categoryArray);
+  // console.log(categoryArray);
 
   return (
-    <div className="pl-6 pr-6 mr-12  ">
-      <h3 className=" font-bold mb-4">Categories</h3>
+    <div className="pl-6 pr-6 mr-12">
+      <h3 className="font-bold mb-4">Categories</h3>
 
       <div>
         {categoryArray.map((currElem, index) => {

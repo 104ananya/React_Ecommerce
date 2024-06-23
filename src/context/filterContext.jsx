@@ -46,6 +46,7 @@ export const FilterContextProvider = ({ children }) => {
   };
 
   // _______________________________________________________________
+  
 
   // useEffect Hook to update sorted products
   useEffect(() => {
@@ -57,6 +58,10 @@ export const FilterContextProvider = ({ children }) => {
   useEffect(() => {
     dispatch({ type: "GET_FILTER_PRODUCTS", payload: products });
   }, [products]);
+
+
+
+  // _______________________________________________________________
 
   return (
     <FilterContext.Provider
