@@ -14,6 +14,7 @@ const initialState = {
     text: "",
     category: "all",
     company: "all",
+    colors: "all",
   },
 };
 
@@ -46,7 +47,7 @@ export const FilterContextProvider = ({ children }) => {
   };
 
   // _______________________________________________________________
-  
+
 
   // useEffect Hook to update sorted products
   useEffect(() => {

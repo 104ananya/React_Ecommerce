@@ -21,15 +21,23 @@ const FilterSection = () => {
       return currElem[field];
     });
 
+    // SPECIAL CONDITION FOR color filter
+    if(field === "colors"){
+      return newData = ["all",  ...new Set([].concat(...newData))];
+    }
+
     // For getting unique value -- using SET
     let uniqueNewData = ["all", ...new Set(newData)];
 
     return uniqueNewData;
   };
 
-  // FOR category filter
+  // Fieldwise filter
   const categoryWiseData = getUniqueData(all_products, "category");
   const companyWiseData = getUniqueData(all_products, "company");
+  const colorWiseData = getUniqueData(all_products, "colors");
+
+  // console.log(colorWiseData);
 
   return (
     <div className="flex flex-col justify-around h-screen p-5">
