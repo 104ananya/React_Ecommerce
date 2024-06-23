@@ -8,7 +8,7 @@ import { useFilterContext } from "../context/filterContext";
 
 const FilterSection = () => {
   const {
-    filters: { text, category, company },
+    filters: { text},
 
     all_products,
     updateFilterValue,
@@ -22,7 +22,7 @@ const FilterSection = () => {
     });
 
     // For getting unique value -- using SET
-    let uniqueNewData = ["All", ...new Set(newData)];
+    let uniqueNewData = ["all", ...new Set(newData)];
 
     return uniqueNewData;
   };

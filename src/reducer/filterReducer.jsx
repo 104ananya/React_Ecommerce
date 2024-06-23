@@ -72,14 +72,14 @@ const filterReducer = (state, action) => {
         });
       }
 
-      if (category != 'all') {
+      if (category !== 'all') {
         tempFilterProduct = tempFilterProduct.filter(
           (current) => current.category === category
           // this is to check if the clicked category is same as the element's category
         );
       }
 
-      if (company != "all") {
+      if (company !== "all") {
         tempFilterProduct = tempFilterProduct.filter(
           (current) => current.company === company
           // this is to check if the clicked category is same as the element's category
