@@ -11,6 +11,7 @@ const ColorFilter = ({ inputColor, colorArray, updateColorFilter }) => {
       <div className="flex space-x-2">
         {colorArray.map((currElem, index) => {
           const isSelected = currElem === inputColor;
+          const isAll = currElem === "all";
 
           return (
             <button
@@ -26,6 +27,7 @@ const ColorFilter = ({ inputColor, colorArray, updateColorFilter }) => {
               className="w-4 h-4 rounded-full hover:bg-opacity-1 flex items-center justify-center"
             >
               {isSelected ? <FaCheck className="text-white w-3 h-3 " /> : null}
+              {isAll ? "All" : null}
             </button>
           );
         })}
