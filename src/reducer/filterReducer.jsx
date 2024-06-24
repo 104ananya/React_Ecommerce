@@ -1,10 +1,18 @@
 const filterReducer = (state, action) => {
   switch (action.type) {
     case "GET_FILTER_PRODUCTS":
+
+      // For fetching all the price values of products
+      let priceArray = action.payload.map((current) => current.price);
+      
+      // For fetching the Maximum price
+      let maxPrice = Math.max(...priceArray);
+
       return {
         ...state,
         filter_products: [...action.payload],
         all_products: [...action.payload],
+        filters: { ...state.filters, maxPrice, price: maxPrice },
       };
 
     case "SET_LIST_VIEW":

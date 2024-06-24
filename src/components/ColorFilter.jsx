@@ -5,7 +5,7 @@ const ColorFilter = ({ inputColor, colorArray, updateColorFilter }) => {
   // console.log(colorArray);
 
   return (
-    <div className="pl-6 mr-12">
+    <div className="pl-6 mr-12 mb-2">
       <h3 className="font-bold mb-4">Colors</h3>
 
       <div className="flex space-x-2">
