@@ -8,7 +8,7 @@ import { useFilterContext } from "../context/filterContext";
 
 const FilterSection = () => {
   const {
-    filters: { text},
+    filters: { text, color },
 
     all_products,
     updateFilterValue,
@@ -22,8 +22,8 @@ const FilterSection = () => {
     });
 
     // SPECIAL CONDITION FOR color filter
-    if(field === "colors"){
-      return newData = ["all",  ...new Set([].concat(...newData))];
+    if (field === "colors") {
+      return (newData = ["all", ...new Set([].concat(...newData))]);
     }
 
     // For getting unique value -- using SET
@@ -57,7 +57,11 @@ const FilterSection = () => {
         />
       </div>
       <div className="p-2">
-        <ColorFilter />
+        <ColorFilter
+          inputColor={color}
+          colorArray={colorWiseData}
+          updateColorFilter={updateFilterValue}
+        />
       </div>
       <div className="p-2">
         <PriceFilter />

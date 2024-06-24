@@ -63,7 +63,7 @@ const filterReducer = (state, action) => {
       let { all_products } = state;
       let tempFilterProduct = [...all_products];
 
-      const { text, category, company } = state.filters;
+      const { text, category, company, color } = state.filters;
 
       if (text) {
         tempFilterProduct = tempFilterProduct.filter((current) => {
@@ -72,7 +72,7 @@ const filterReducer = (state, action) => {
         });
       }
 
-      if (category !== 'all') {
+      if (category !== "all") {
         tempFilterProduct = tempFilterProduct.filter(
           (current) => current.category === category
           // this is to check if the clicked category is same as the element's category
@@ -82,7 +82,13 @@ const filterReducer = (state, action) => {
       if (company !== "all") {
         tempFilterProduct = tempFilterProduct.filter(
           (current) => current.company === company
-          // this is to check if the clicked category is same as the element's category
+          // this is to check if the clicked company is same as the element's company
+        );
+      }
+
+      if (color) {
+        tempFilterProduct = tempFilterProduct.filter((current) =>
+          current.colors.includes(color)
         );
       }
 
