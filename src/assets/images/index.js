@@ -30,6 +30,17 @@ import logo from './logo.svg'
 import two_lady from './two_lady.png'
 import man_grp_1 from './man_grp_1.png'
 
+import newletter from './Newletter.webp'
+import paperplane from './paperplane.png'
+
+import special01 from './special01.jpg'
+import special02 from './special02.jpg'
+import special03 from './special03.jpg'
+import special04 from './special04.jpg'
+
+import collection01 from './collection01.jpg'
+import collection02 from './collection02.jpg'
+
 export {
     bigShoe1,
     bigShoe2,
@@ -62,6 +73,17 @@ export {
     open_laptop,
 
     two_lady,
-    man_grp_1
+    man_grp_1,
+
+    newletter,
+    paperplane,
+
+    special01,
+    special02,
+    special03,
+    special04,
+
+    collection01,
+    collection02
 
 }

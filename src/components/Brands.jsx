@@ -8,8 +8,8 @@ import { SiLenovo } from "react-icons/si";
 
 const Brands = () => {
   return (
-    <main className="bg-gray-200 flex flex-col justify-center items-center">
-      <div className="text-4xl font-bold my-5">Featured Brands</div>
+    <main className="bg-gray-200 flex flex-col justify-center items-center pt-4 pb-8">
+      <div className="text-4xl font-bold my-4">Featured Brands</div>
       <div className="grid grid-cols-6 gap-4 mt-5">
         {/* Grid for the first brand */}
         <div className="brand-grid">

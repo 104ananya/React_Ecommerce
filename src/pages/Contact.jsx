@@ -59,7 +59,8 @@ const Contact = () => {
               <div>
                 <button
                   type="submit"
-                  className=" bg-coral-red hover:bg-dark-red text-white font-bold py-2 px-4 rounded-md "
+                  // className=" bg-coral-red hover:bg-dark-red text-white font-bold py-2 px-4 rounded-md "
+                  className="button"
                 >
                   Submit
                 </button>
