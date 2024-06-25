@@ -49,12 +49,16 @@ export const FilterContextProvider = ({ children }) => {
     return dispatch({ type: "UPDATE_FILTERS_VALUE", payload: { name, value } });
   };
 
-  // _______________________________________________________________
+  // To clear all the selected filters
+  const clearFilters = () => {
+    dispatch({ type: "CLEAR_FILTERS" });
+  };
 
+  // _______________________________________________________________
 
   // useEffect Hook to update sorted products
   useEffect(() => {
-    dispatch({ type: "FILTER_SEARCHED_PRODUCTS", payload: products});
+    dispatch({ type: "FILTER_SEARCHED_PRODUCTS", payload: products });
     dispatch({ type: "GET_SORTED_PRODUCTS", payload: products });
   }, [products, state.sorting_value, state.filters]);
 
@@ -63,13 +67,17 @@ export const FilterContextProvider = ({ children }) => {
     dispatch({ type: "GET_FILTER_PRODUCTS", payload: products });
   }, [products]);
 
-
-
   // _______________________________________________________________
 
   return (
     <FilterContext.Provider
-      value={{ ...state, setListView, sorting_function, updateFilterValue }}
+      value={{
+        ...state,
+        setListView,
+        sorting_function,
+        updateFilterValue,
+        clearFilters,
+      }}
     >
       {children}
     </FilterContext.Provider>

@@ -12,6 +12,7 @@ const FilterSection = () => {
 
     all_products,
     updateFilterValue,
+    clearFilters,
   } = useFilterContext();
 
   // COMMON FUNCTION - for each field
@@ -40,7 +41,7 @@ const FilterSection = () => {
   // console.log(colorWiseData);
 
   return (
-    <div className="flex flex-col justify-around h-screen p-5">
+    <div className="flex flex-col justify-around p-5">
       <div className="p-2">
         <SearchBar inputText={text} updateSearchFilter={updateFilterValue} />
       </div>
@@ -66,7 +67,10 @@ const FilterSection = () => {
       <div className="p-2">
         <PriceFilter />
       </div>
-      <div className="p-2">Item 6</div>
+
+      <div className="p-2 flex justify-center mr-12 pr-12">
+        <button className="button" onClick={clearFilters}>CLEAR</button>
+      </div>
     </div>
   );
 };
