@@ -71,7 +71,7 @@ const filterReducer = (state, action) => {
       let { all_products } = state;
       let tempFilterProduct = [...all_products];
 
-      const { text, category, company, color } = state.filters;
+      const { text, category, company, color, price } = state.filters;
 
       if (text) {
         tempFilterProduct = tempFilterProduct.filter((current) => {
@@ -99,6 +99,17 @@ const filterReducer = (state, action) => {
           current.colors.includes(color)
         );
       }
+
+      if (price === 0) {
+        tempFilterProduct = tempFilterProduct.filter(
+          (current) => current.price === price
+        );
+      } else {
+        tempFilterProduct = tempFilterProduct.filter(
+          (current) => current.price <= price
+        );
+      }
+     
 
       return {
         ...state,

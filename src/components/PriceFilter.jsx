@@ -9,7 +9,7 @@ const PriceFilter = () => {
   } = useFilterContext();
 
   return (
-    <div className="pl-6 mr-12">
+    <div className="pl-6 mr-12 mb-2">
       <h3 className="font-bold mb-4">Price</h3>
       <p>
         <FormatPrice price={price} />
